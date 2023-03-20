@@ -105,7 +105,7 @@ searchSection.addEventListener("click",function(){
 // Category Section
 async function Categories() {
     CardDAta.innerHTML = ""
-    search.innerHTML = "";
+    search.innerHTML = ""
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
     response = await response.json()
     showCategories(response.categories)
@@ -114,7 +114,7 @@ async function CategoryMeals(categ) {
     CardDAta.innerHTML = ""
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categ}`)
     response = await response.json()
-    displayMeals(response.meals.slice(0, 10))
+    Meals(response.meals.slice(0, 10))
 }
 function showCategories(cat) {
     let cartoona = "";
@@ -140,7 +140,7 @@ categorySection.addEventListener("click",function(){
 //area section
 async function Area() {
     CardDAta.innerHTML = ""
-    search.innerHTML = "";
+    search.innerHTML = ""
     let respone = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
     respone = await respone.json()
     displayArea(respone.meals)
@@ -163,7 +163,7 @@ async function AreaMeals(area) {
     CardDAta.innerHTML = ""
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
     response = await response.json()
-    console.log(response);
+    // console.log(response);
     Meals(response.meals.slice(0, 10))
 }
 areaSection.addEventListener("click",function(){
